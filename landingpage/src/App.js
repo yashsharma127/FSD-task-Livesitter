@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import LivestreamPlayer from './components/LivestreamPlayer';
+import OverlayOptions from './components/OverlayOptions';
 
-function App() {
+const App = () => {
+  const livestreamUrl = 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <LivestreamPlayer url={livestreamUrl} />
+      <OverlayOptions />
     </div>
   );
-}
+};
 
 export default App;
