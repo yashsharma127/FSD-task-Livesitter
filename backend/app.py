@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
 from flask_pymongo import PyMongo
+from flask_cors import CORS  
 
 app = Flask(__name__)
-app.config['MONGO_URI'] = 'mongodb://localhost:27017/overlaydb'  # Update with your MongoDB URI
+CORS(app)   
+app.config['MONGO_URI'] = 'mongodb://localhost:27017/overlaydb'  
 mongo = PyMongo(app)
 
 @app.route('/overlay', methods=['POST'])
